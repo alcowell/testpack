@@ -1,0 +1,12 @@
+---
+name: 'testpack'
+pack: 'testpack'
+description: 'A test rule for testing testpack'
+enabled: True
+trigger:
+  type: mypack.changed_file
+
+action:
+  ref: 'mypack.output_context'
+  parameters:
+    context: '[{{trigger.time}}] ({{trigger.status}}) {{trigger.path}}'
